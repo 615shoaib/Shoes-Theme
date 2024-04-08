@@ -8,7 +8,7 @@ const FooterBottom = () => {
           <div className="row">
             <div className="col-sm-6">
               <div className="widget-copyright">
-                COPYRIGHT © 2016 <a href="#">ROADTHEMES.COM</a>. ALL RIGHTS
+                COPYRIGHT © 2016 <a href="#">ROADTHEMES.COM</a> ALL RIGHTS
                 RESERVED{" "}
               </div>
             </div>

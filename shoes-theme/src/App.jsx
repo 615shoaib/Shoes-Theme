@@ -1,7 +1,6 @@
 import "../src/cssFiles/Header.scss";
 import { Route, Routes } from "react-router-dom";
 import Homepages from "./Pages/Homepage/Homepages";
-import FooterComp from "../src/Components/Footer/Footer"
 import Shop from "./Pages/Shop/Shop";
 import CartDetail from "./Components/Header/CartDetail";
 import Contactus from "./Pages/ContactUs/Contact-us";
@@ -11,6 +10,7 @@ import Checkout from "./Components/Header/Checkout/Checkout";
 import Demo from "./Components/Navbar/Demo";
 import ProductDetail from "./Pages/Homepage/CartDetailpage/CartDetail";
 import HeartData from "./Components/Navbar/HeartData";
+import FooterComp from "./Components/Footer/FooterComp";
 
 
 function App() {
