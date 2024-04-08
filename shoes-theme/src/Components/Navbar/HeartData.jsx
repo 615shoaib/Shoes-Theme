@@ -1,48 +1,21 @@
-import React from "react";
-import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
-import Fade from "@mui/material/Fade";
 import { useSelector } from "react-redux";
+import AddtoCart from "../../Pages/Homepage/CatgoeyBased/AddTocart";
 
-const HeartData = ({
-  showMenuItem,
-  setShowMenuItem,
-  anchorEl,
-  setAnchorEl,
-  handleClose,
-}) => {
-  const open = Boolean(anchorEl);
-
-  const handleCloseMenuItem = () => {
-    setShowMenuItem(false);
-  };
-
+const HeartData = () => {
   const wishlistItems = useSelector((state) => state.wishlist.wishlistItems);
   console.log(wishlistItems);
 
   return (
     <>
-      {showMenuItem && (
-        <Menu
-          id="fade-menu"
-          MenuListProps={{
-            "aria-labelledby": "fade-button",
-          }}
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          TransitionComponent={Fade}
-        >
-          {Array.isArray(wishlistItems) ? (
-            wishlistItems.map((val) => (
-              <MenuItem onClick={handleCloseMenuItem}>{val.name}</MenuItem>
-            ))
-          ) : (
-            <div className="w-100">
-             <h1 className="fs-4">No data found</h1> 
-              </div>
-          )}
-        </Menu>
+      {wishlistItems && wishlistItems.length > 0 ? (
+        wishlistItems.map((product) => (
+          <div key={product.id} className="mt-5 mb-4">  
+          </div>
+        ))
+      ) : (
+        <div className="d-flex justify-content-center h-100 mb-5 mt-5">
+          <h1 className="fs-1 mt-3">No products added to the wishlist</h1>
+        </div>
       )}
     </>
   );

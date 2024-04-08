@@ -1,29 +1,3 @@
-// import React, { useEffect } from "react";
-// import { useDispatch } from "react-redux";
-// import { addTocart } from "../../../Redux/Reducer/Cart";
-
-
-// const AddtoCart = ({product}) => {
-
-//     const dispatch = useDispatch()
-
- 
-//     const handleClick =()=>{
-//        dispatch(addTocart(product))
-//     }
-
-//   return (
-//     <>
-//       <button className="btn btn-dark" id="btn" title="cart"  onClick={handleClick}> 
-//         Add to cart
-//       </button>
-//     </>
-//   );
-// };
-
-// export default AddtoCart;
-
-
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTocart } from '../../../Redux/Reducer/Cart';

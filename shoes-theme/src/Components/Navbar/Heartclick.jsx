@@ -35,7 +35,7 @@ function HeartClick() {
         setShowMenuItem={setShowMenuItem}
         anchorEl={anchorEl}
         setAnchorEl={setAnchorEl}
-        handleClose={handleClose} // Pass handleClose function to HeartData component
+        handleClose={handleClose}
       />
     </>
   );

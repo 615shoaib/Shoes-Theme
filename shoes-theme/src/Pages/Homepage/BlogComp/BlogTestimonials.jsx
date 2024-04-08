@@ -18,8 +18,8 @@ const BlogTestimonials = () => {
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 6,
-          slidesToScroll: 6,
+          slidesToShow: 12,
+          slidesToScroll: 12,
           rows: 1,
         },
       },
@@ -57,7 +57,7 @@ const BlogTestimonials = () => {
     <div className="container">
       <Slider {...settings}>
         {images.map((image, index) => (
-          <div key={index} className="col-lg-12 col-md-12 mb-2 d-flex">
+          <div key={index} className="col-lg-12 col-md-12 col-12 mb-2 d-flex">
             <div className="post-wrapper gap-5">
               <div className="post-thumb">
                 <Link to="/">

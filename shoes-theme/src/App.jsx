@@ -25,7 +25,7 @@ function App() {
         <Route path="/view-cart/:id" element={<ProductDetail />} />
         <Route path="/add-to-cart" element={<CartDetail />} />
         <Route path="/check-out" element={<Checkout />} />
-        <Route path="/wishlist" element={<HeartData />} />
+        <Route path="/add-wishlist" element={<HeartData />} />
       </Routes>
       <FooterComp />
     </>

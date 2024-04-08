@@ -3,8 +3,10 @@ import { useDispatch } from 'react-redux';
 import { setSelectedCategory } from './Category';
 import { NavLink } from 'react-router-dom';
 
-const Button = ({ selectedCategory, filteredCategories }) => {
+const Button = ({filteredCategories }) => {
   const dispatch = useDispatch();
+
+
 
   const handleCategoryClick = (category) => {
     dispatch(setSelectedCategory(category.id));

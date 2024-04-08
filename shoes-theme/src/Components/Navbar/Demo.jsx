@@ -74,8 +74,10 @@ const Demo = () => {
               <div className="row text-align-right">
                 <div className="col-lg-12 col-md-10 d-flex">
                   <div className="mx-3 p-2 mt-2 ms-5">
-                  <Heartclick />
-                   
+                  {/* <Heartclick /> */}
+                  <Link to="/add-wishlist">
+                  <i className="fa-regular fa-heart fs-4"></i>
+                  </Link>
 
                   <i className="fa-solid fa-magnifying-glass fs-5 mx-5"></i>
                     <Link to="/add-to-cart">
