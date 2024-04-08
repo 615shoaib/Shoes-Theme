@@ -2,8 +2,6 @@ import React from "react";
 
 const Footer = () => {
   const LiStyle = {
-    width: "270px",
-    height: "34px",
     display: "flex",
     background: "#383838",
     margin: "0 0 15px 0",
