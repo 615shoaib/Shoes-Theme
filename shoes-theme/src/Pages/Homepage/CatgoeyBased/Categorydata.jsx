@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Skeleton } from '@mui/material';
 import AddtoCart from './AddTocart';
 import { Ratings } from './Rating';
@@ -21,6 +21,9 @@ const Categorydata = ({ products, loading }) => {
     fontFamily: 'Montserrat, Arial, Helvetica, sans-serif',
     color: 'red',
   };
+
+
+ 
 
   return (
     <div className="container">

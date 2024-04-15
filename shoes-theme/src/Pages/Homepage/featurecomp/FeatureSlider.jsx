@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -10,6 +10,9 @@ import { fetchProductsAsync } from "../../../Redux/Reducer/Reducer";
 import {Link} from "react-router-dom"
 import AddtoCart from "../CatgoeyBased/AddTocart";
 import { Ratings } from "../CatgoeyBased/Rating";
+import { Skeleton } from '@mui/material';
+
+
 
 const FeatureSlider = () => {
   var settings = {
@@ -64,12 +67,47 @@ const FeatureSlider = () => {
 
   const { ProductsItems } = useSelector((state) => state.products);
 
+  const [loading,setLoading]=useState(true)
+
   useEffect(() => {
-    dispatch(fetchProductsAsync());
+    const fetchData = async () => {
+      await dispatch(fetchProductsAsync());
+      setLoading(false); 
+    };
+  
+    fetchData();
   }, [dispatch]);
+  
 
   return (
-    <Container fluid>
+    <>
+   {loading ? (
+        <Container fluid>
+          <Row>
+            {Array.from({ length: 3 }).map((_, index) => (
+              <Col key={index} lg={4} md={6} mb={4}>
+                <div className="card px-4">
+                  <Skeleton variant="rectangular" width={300} height={200} animation="wave" />
+                  <div className="card-body">
+                    <h5 className="card-title">
+                      <Skeleton variant="text" width={200} animation="wave" />
+                    </h5>
+                    <p className="card-text">
+                      <Skeleton variant="text" width={150} animation="wave" />
+                    </p>
+                    <p className="card-text">
+                      <Skeleton variant="text" width={180} animation="wave" />
+                    </p>
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      )
+      :
+      (
+          <Container fluid>
       <Row>
         <Col>
           <Slider {...settings} className="mb-5">
@@ -122,6 +160,10 @@ const FeatureSlider = () => {
         </Col>
       </Row>
     </Container>
+      )
+    }
+  
+    </>
   );
 };
 

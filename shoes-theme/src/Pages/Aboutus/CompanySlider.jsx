@@ -58,7 +58,7 @@ const CompanySlider = () => {
     <>
       <Slider {...settings}>
         {ComapyImages.map((image, index) => (
-          <div key={index} className="col-12"> {/* Added key prop for unique identification */}
+          <div key={index} className="col-12">
             <div className="company__card d-flex mb-5">
               <img src={image.image} alt="" className="img-fluid"/>
             </div>

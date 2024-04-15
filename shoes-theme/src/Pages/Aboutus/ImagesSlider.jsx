@@ -12,7 +12,7 @@ const ImagesSlider = () => {
         slidesToShow: 3,
         slidesToScroll: 3,
         arrows: false,
-        responsive: [
+       responsive: [
             {
                 breakpoint:767,
                 settings:{
@@ -30,7 +30,8 @@ const ImagesSlider = () => {
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 dots:true,
-              arrows:true
+              arrows:true,
+              autoplay:true
               },
             },
             {
@@ -39,6 +40,7 @@ const ImagesSlider = () => {
                 slidesToShow: 1,
                 slidesToScroll :1,
                 dots:true,
+                autoplay:true,
               },
             },
           ],
@@ -75,10 +77,10 @@ const ImagesSlider = () => {
      <Slider {...settings}>
     {
       
-        imagesComp.map((image)=>(
-            <div className=" item-images mb-5">
+        imagesComp.map((image,index)=>(
+            <div className=" item-images mb-5" key={index}>
                 <div className="overlay"></div>
-            <img src={image.images} alt="/" style={{maxWidth:'317px',height:'317px'}}  className="img-fluid"/>
+            <img src={image.images} alt="/" style={{maxWidth:'317px',height:'317px'}}  className="img-fluid item"/>
             <div className="text-team">
                 <h3>{image.name}</h3>
                 <p>{image.title}</p>

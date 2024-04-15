@@ -28,9 +28,9 @@ const AboutComp = () => {
           height="300"  
           src="https://www.youtube.com/embed/JDPQfkIakTs" 
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
           className="bg-dark w-100"
         ></iframe>
         </div>

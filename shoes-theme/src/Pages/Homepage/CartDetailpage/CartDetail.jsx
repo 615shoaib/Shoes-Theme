@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductsAsync } from '../../../Redux/Reducer/Reducer.js';
 import { useEffect, useState } from 'react';
@@ -63,15 +63,15 @@ function ProductDetail() {
                   <div className="d-flex align-items-center gap-3">
                     <h6>Share:</h6>
                     <div className="social-icons-container m-0 d-flex gap-3">
-                      <a href="#" className="insta">
+                      <Link to="#" className="insta">
                         <i className="fa-brands fa-instagram"></i>
-                      </a>
-                      <a href="#" className="twitter">
+                      </Link>
+                      <Link to="#" className="twitter">
                         <i className="fa-brands fa-twitter"></i>
-                      </a>
-                      <a href="#" className="facebook">
+                      </Link>
+                      <Link to="#" className="facebook">
                         <i className="fa-brands fa-facebook-f"></i>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

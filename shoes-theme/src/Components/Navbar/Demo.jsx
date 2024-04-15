@@ -13,9 +13,9 @@ const Demo = () => {
     <>
        <nav className="navbar navbar-expand-lg navbar-light bg-light w-100 d-flex justify-content-between">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <Link className="navbar-brand" to="/">
               <img  src="http://demo.roadthemes.com/james/wp-content/uploads/2015/12/logo.png" style={{width:'200px'}}/>
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -36,7 +36,7 @@ const Demo = () => {
                     <NavLink
                       to="/"
                       className="nav-link"
-                      activeClassName="active"
+                      activeclassname="active"
                     >
                       HOME
                     </NavLink>
@@ -45,7 +45,7 @@ const Demo = () => {
                     <NavLink
                       to="/shop"
                       className="nav-link"
-                      activeClassName="active"
+                      activeclassname="active"
                     >
                       SHOP
                     </NavLink>
@@ -55,18 +55,18 @@ const Demo = () => {
                     <NavLink
                       to="/about-us"
                       className="nav-link"
-                      activeClassName="active"
+                      activeclassname="active"
                     >
                      About us
                     </NavLink>
                   </li>
                   <li className="nav-item">
                     <NavLink
-                      to="/contact-up"
+                      to="/contact-us"
                       className="nav-link"
-                      activeClassName="active"
+                      activeclassname="active"
                     >
-                      Contact Up
+                      Contact Us
                     </NavLink>
                   </li>
                 </ul>

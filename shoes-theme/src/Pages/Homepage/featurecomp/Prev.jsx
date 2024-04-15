@@ -24,7 +24,7 @@ const PreButton = (props) => {
       
     />
         <i className="fa-solid fa-arrow-left fs-2 text-center" 
-            style={{top:"-45px",position:'relative',left:"96%"}}
+            style={{top:"-45px",position:'relative',left:"96%",cursor:'pointer'}}
             onClick={onClick}
             ></i>
     </>

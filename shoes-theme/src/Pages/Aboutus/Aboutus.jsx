@@ -17,7 +17,7 @@ const Aboutus = () => {
             </div>
         </div>
         <div className="row">
-            <div className="col-lg-12 col-md-12">
+            <div className="col-lg-12 col-md-12 col-sm-12">
                 <ImagesSlider />
             </div>
         </div>

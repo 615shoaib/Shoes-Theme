@@ -20,6 +20,7 @@ const FormComp = () => {
             className="form-control mb-4"
             id="exampleInputPassword1"
             placeholder="Password"
+            autoComplete="false"
             style={{ padding: '16px 20px', fontFamily: 'Poppins, sans-serif', width: '100%', boxSizing: 'border-box' }}
           />
         </div>

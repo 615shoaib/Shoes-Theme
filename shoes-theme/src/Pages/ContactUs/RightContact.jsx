@@ -6,7 +6,7 @@ const RightContact = () => {
       <section className="right-box mt-2  " >
         <div className="commiunation-text d-flex mb-4">
           <div className="commiunation-icon">
-            <i class="fa-solid fa-house-chimney"></i>
+            <i className="fa-solid fa-house-chimney"></i>
           </div>
 
           <div className="commiunation-info">
@@ -17,7 +17,7 @@ const RightContact = () => {
 
         <div className="commiunation-text d-flex mb-4">
           <div className="commiunation-icon">
-            <i class="fa-solid fa-phone-flip"></i>
+            <i className="fa-solid fa-phone-flip"></i>
           </div>
           <div className="commiunation-info">
             <h3 className="ms-2 mt-2">PHONE: : </h3>
@@ -27,7 +27,7 @@ const RightContact = () => {
 
         <div className="commiunation-text d-flex mb-4">
           <div className="commiunation-icon">
-            <i class="fa-solid fa-fax"></i>
+            <i className="fa-solid fa-fax"></i>
           </div>
           <div className="commiunation-info">
             <h3 className="ms-2 mt-2">FAX: </h3>
@@ -37,7 +37,7 @@ const RightContact = () => {
 
         <div className="commiunation-text d-flex mb-5">
           <div className="commiunation-icon">
-            <i class="fa-solid fa-envelope"></i>
+            <i className="fa-solid fa-envelope"></i>
           </div>
           <div className="commiunation-info">
             <h3 className="ms-2 mt-2">EMAIL:</h3>
