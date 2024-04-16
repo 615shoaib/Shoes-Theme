@@ -21,6 +21,7 @@ const PreButton = (props) => {
         height:"30px",
         border:"1px solid #ccc"
         }}
+        onClick={onClick}
       
     />
         <i className="fa-solid fa-arrow-left fs-2 text-center" 

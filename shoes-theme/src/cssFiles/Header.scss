@@ -898,5 +898,71 @@ width: 100%;
   .d-sm-none {
     display: none;
   }
- 
+ .feat-comp{
+  font-size: 16px;
+ }
 }
+@media (max-width:320px){
+  .slidercaption{
+    margin-right: -20px;
+    font-size:35px;
+  }
+  .btn-slider{
+    color: #000000;
+  }
+}
+
+// scroll
+::-webkit-scrollbar{
+  position: absolute;
+  top: 20px;
+  background-color: #303030;
+  width: 12px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #388396;
+  border-radius: 0%;
+}
+
+
+// selection
+::selection{
+  background-color: black;
+  color: #388396;
+}
+
+
+
+// scrollbottomtotop
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+}
+
+.scroll-to-top button {
+  background-color: #388396 !important;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 60px 20px #0000;
+}
+
+.scroll-to-top button:hover {
+  background-color: red;
+}
+
+

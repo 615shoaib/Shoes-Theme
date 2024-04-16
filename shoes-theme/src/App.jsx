@@ -11,12 +11,14 @@ import Demo from "./Components/Navbar/Demo";
 import ProductDetail from "./Pages/Homepage/CartDetailpage/CartDetail";
 import HeartData from "./Components/Navbar/HeartData";
 import FooterComp from "./Components/Footer/FooterComp";
+import ScrollTops from "./Components/ScrollTop/ScrollTop";
 
 
 function App() {
   return (
     <>
-  <Demo />
+  <Demo /> 
+ 
       <Routes>
  <Route path="/" element={<Homepages />} />
         <Route path="/shop" element={<Shop />} />
@@ -27,6 +29,7 @@ function App() {
         <Route path="/check-out" element={<Checkout />} />
         <Route path="/add-wishlist" element={<HeartData />} />
       </Routes>
+      <ScrollTops />
       <FooterComp />
     </>
   );
