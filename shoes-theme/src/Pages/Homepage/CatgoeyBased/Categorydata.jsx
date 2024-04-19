@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import { Skeleton } from '@mui/material';
 import AddtoCart from './AddTocart';
 import { Ratings } from './Rating';
@@ -6,24 +6,19 @@ import ViewCart from '../CartDetailpage/ViewCart';
 import HeartIcon from './HeartIcon';
 
 const Categorydata = ({ products, loading }) => {
-  const priceDiv = {
-    fontSize: '16px',
-    lineHeight: '20px',
-    color: '#F25862',
-    fontFamily: 'Montserrat, Arial, Helvetica, sans-serif',
+  const [clickedProductId, setClickedProductId] = useState(null);
+
+  const handleProductClick = (productId) => {
+    setClickedProductId(productId);
   };
 
-  const titleStyle = {
-    fontSize: '13px',
-    fontWeight: '500',
-    lineHeight: '18px',
-    textTransform: 'uppercase',
-    fontFamily: 'Montserrat, Arial, Helvetica, sans-serif',
-    color: 'red',
+  const handleMouseEnter = () => {
+    // Handle mouse enter event if needed
   };
 
-
- 
+  const handleMouseLeave = () => {
+    // Handle mouse leave event if needed
+  };
 
   return (
     <div className="container">
@@ -51,23 +46,35 @@ const Categorydata = ({ products, loading }) => {
           Array.isArray(products) &&
           products.map(product => (
             <div key={product.id} className="col-lg-4 col-md-6 mb-4">
-              <div className="card">
+              <div className="card"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={() => handleProductClick(product.id)}
+              >
                 <img
                   src={product.images && product.images.length > 0 ? product.images[0].src : ''}
                   className="card-img-top"
                   alt="Product"
                 />
+               {clickedProductId === product.id && product && product.images && product.images.length > 1 && (
+  <img
+    src={product.images[1].src}
+    alt="Hovered Product"
+    className="hover-image"
+  />
+)}
+
                 <div className="card-body">
                   <div className="d-flex">
                     <AddtoCart product={product} />
                     <ViewCart product={product} />
                     <HeartIcon product={product} />
                   </div>
-                  <h5 className="card-title" style={titleStyle}>
+                  <h5 className="card-title" style={{ fontSize: '13px', fontWeight: '500', lineHeight: '18px', textTransform: 'uppercase', fontFamily: 'Montserrat, Arial, Helvetica, sans-serif', color: 'red' }}>
                     {product.name}
                   </h5>
                   <div className="d-flex justify-content-between align-items-center mb-5">
-                    <span style={priceDiv}>£{product.price}</span>
+                    <span style={{ fontSize: '16px', lineHeight: '20px', color: '#F25862', fontFamily: 'Montserrat, Arial, Helvetica, sans-serif' }}>£{product.price}</span>
                     <div>
                       <Ratings />
                     </div>

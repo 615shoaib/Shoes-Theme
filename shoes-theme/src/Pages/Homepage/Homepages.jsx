@@ -4,7 +4,6 @@ import Selling from './SellingComp/Selling'
 import FetureComp from './featurecomp/FetureComp'
 import NewComp from './NewComp/NewComp'
 import Testimonial from './Testimonials/Testimonial'
-import { BlogComp } from './BlogComp/BlogComp'
 import Slider from '../../Components/Slider/Slider'
 
 
@@ -17,7 +16,7 @@ const Homepages = () => {
      <FetureComp />
      <NewComp />
      <Testimonial />
-     {/* <BlogComp /> */}
+    
     </>
   )
 }

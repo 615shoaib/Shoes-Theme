@@ -19,7 +19,7 @@ const Button = ({filteredCategories,loading }) => {
       loading ? (
     
         Array.from({ length: 3 }).map((_, index) => (
-          <div key={index} className="col-lg-4 col-md-6 mb-4">
+          <div key={index} className="col-lg-4 col-md-6 mb-4 ">
             <div className="card px-4">
               <div className="card-body">
                 <h5 className="card-title">

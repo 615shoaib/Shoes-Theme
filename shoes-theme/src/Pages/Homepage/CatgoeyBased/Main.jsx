@@ -40,6 +40,9 @@ const Main = () => {
 
   const filteredCategories = categories.filter(category => category.name !== 'Uncategorized');
 
+
+
+  
   return (
     <div className="container">
       <div className="row">

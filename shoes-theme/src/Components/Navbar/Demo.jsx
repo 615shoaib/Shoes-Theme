@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Link,NavLink } from "react-router-dom";
 import HeartIcon from "../../Pages/Homepage/CatgoeyBased/HeartIcon";
 import Heartclick from "./Heartclick";
-
+import Logo from "../../Images/Logo.png"
 const Demo = () => {
   const CartItems = useSelector((state)=>state.Cart.items) || []
 
@@ -14,7 +14,7 @@ const Demo = () => {
        <nav className="navbar navbar-expand-lg navbar-light bg-light w-100 d-flex justify-content-between">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
-              <img  src="http://demo.roadthemes.com/james/wp-content/uploads/2015/12/logo.png" style={{width:'200px'}}/>
+              <img  src={Logo} style={{width:'200px'}}/>
             </Link>
             <button
               className="navbar-toggler"
