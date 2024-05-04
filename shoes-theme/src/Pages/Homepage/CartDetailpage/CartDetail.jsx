@@ -10,13 +10,13 @@ function ProductDetail() {
 
   const { ProductsItems,loading } = useSelector((state) => state.products);
 
+
   useEffect(() => {
     dispatch(fetchProductsAsync());
   }, [dispatch]);
 
   const style = { display: 'inline-block' };
 
-  // Find the product with the matching id
   const product = ProductsItems.find((product) => product.id === Number(id));
 
   if (!product) {
@@ -37,15 +37,14 @@ function ProductDetail() {
       <div className="container detail-pg-container mt-2">
         <div className="row">
           <div className="row">
-            <div className="col-lg-6 col-md-12">
-              <img style={{ maxWidth: '500px',width:'100%' }} src={selectedImage} alt="" />
+            <div className="col-xl-5 col-lg-6 col-md-8">
+              <img className='img-fluid' src={selectedImage} alt="" />
             </div>
-            <div className="col-lg-4 col-md-12">
+            <div className=" col-xl-7 col-lg-6 col-md-12">
               <div className="detail-content">
                 <h3 className="detail-title contact-page">{product.name}</h3>
                 <h4 className='product' style={{color: 'rgb(56, 131, 150)'}}>${product.price}</h4>
-                {/* <p className="detail-desc" dangerouslySetInnerHTML={{ __html: product.description }} /> */}
-                <p className='para'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero at itaque vitae a quo unde minus labore temporibus, expedita rem dignissimos iure ea doloremque laborum delectus soluta reprehenderit laboriosam dicta!</p>
+                <p className='para' dangerouslySetInnerHTML={{__html:product.description}}/>
                 <div className="product-info">
                   <div className="d-flex align-items-center gap-3 pb-2">
                     <h6>SKU :</h6>
@@ -71,7 +70,9 @@ function ProductDetail() {
                       <Link to="#" className="facebook">
                         <i className="fa-brands fa-facebook-f"></i>
                       </Link>
+                  
                     </div>
+                    
                   </div>
                 </div>
               </div>
@@ -86,10 +87,10 @@ function ProductDetail() {
           <div className="card">
             <img
               src={image.src}
-              className="img-fluid mt-3"
+              className="img-fluid mt-3 "
               alt={`Product Image ${index}`}
               onClick={() => handleImageClick(image.src)}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: 'pointer', }}
             />
           </div>
         </div>
@@ -119,7 +120,7 @@ function ProductDetail() {
                 <div className="tab-content" id="myTabContent">
                   <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <h5 >About</h5>
-                    <p className='para'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus distinctio dolores eveniet exercitationem explicabo nihil quaerat reprehenderit, sed tempora!</p>
+                    <p className='para text-dark' dangerouslySetInnerHTML={{__html:product.short_description}} />
                   </div>
                   <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div>

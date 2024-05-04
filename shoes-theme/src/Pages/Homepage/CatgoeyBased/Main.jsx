@@ -38,8 +38,7 @@ const Main = () => {
     }
   }, [categories, dispatch]);
 
-  const filteredCategories = categories.filter(category => category.name !== 'Uncategorized');
-
+  const filteredCategories = Array.isArray(categories) && categories.filter(category => category.name !== 'Uncategorized' && category.name !== 'Uncategorised');
 
 
   
@@ -50,7 +49,7 @@ const Main = () => {
           <Button filteredCategories={filteredCategories} selectedCategory={selectedCategory} loading={loading} setLoading={setLoading}/>
         </div>
         <div className="col-lg-8">
-          <Categorydata products={products} loading={loading}/>
+          <Categorydata products={products.slice(0,3)} loading={loading}/>
         </div>
       </div>
     </div>

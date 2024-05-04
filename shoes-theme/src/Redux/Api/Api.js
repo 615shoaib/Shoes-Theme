@@ -5,7 +5,7 @@ import { apikesy } from './apikesy'
 export const ProductsApi = async() => {
 
 try {
-    const APIDATA = await fetch('https://localhost/ZainSite/wp-json/wc/v3/products',{
+    const APIDATA = await fetch('https://zahidg21.sg-host.com/wp-json/wc/v3/products',{
       method: "GET",
       headers:{
         'Authorization' : `Basic ${apikesy()}`,

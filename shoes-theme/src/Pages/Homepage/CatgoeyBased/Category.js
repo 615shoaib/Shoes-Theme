@@ -7,7 +7,7 @@ export const fetchCategories = createAsyncThunk(
   'category/fetchCategories',
   async () => {
     try {
-      const response = await axios.get('https://localhost/ZainSite/wp-json/wc/v3/products/categories', {
+      const response = await axios.get('https://zahidg21.sg-host.com/wp-json/wc/v3/products/categories', {
         headers: {
           "Authorization": `Basic ${apikesy()}`,
           'content-type': 'application/json'
@@ -24,13 +24,14 @@ export const fetchProducts = createAsyncThunk(
   'category/fetchProducts',
   async (categoryId) => {
     try {
-      const response = await axios.get(`https://localhost/ZainSite/wp-json/wc/v3/products?category=${categoryId}`, {
+      const response = await axios.get(`https://zahidg21.sg-host.com/wp-json/wc/v3/products?category=${categoryId}`, {
         headers: {
           "Authorization": `Basic ${apikesy()}`,
           'content-type': 'application/json'
         }
       });
       return response.data;
+      console.log(response.data)
     } catch (error) {
       throw new Error('Failed to fetch products: ' + error.message);
     }
