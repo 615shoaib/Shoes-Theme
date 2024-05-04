@@ -4,8 +4,17 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { apikesy } from "../../../Redux/Api/apikesy";
 import { removeAllOrder } from "../../../Redux/Reducer/Cart";
+import { Link, useNavigate } from "react-router-dom";
 
 export const BillingPage = () => {
+
+
+  // navegate for new windwo
+  const navigate = useNavigate();
+
+
+ 
+
   const {
     register,
     handleSubmit,
@@ -37,7 +46,7 @@ export const BillingPage = () => {
 
     try {
       const response = await axios.post(
-        `https://localhost/ZainSite/wp-json/wc/v3/orders`,
+        `https://zahidg21.sg-host.com/wp-json/wc/v3/orders`,
         billingData,
         {
           headers: {
@@ -55,6 +64,7 @@ export const BillingPage = () => {
     } catch (error) {
       console.error("Error creating order:", error);
     }
+    navigate("/order-done")
   };
 
   return (
@@ -175,8 +185,9 @@ export const BillingPage = () => {
         </div>
 
         <div className="col-12 col-lg-12">
-          <button type="submit" className="btn btn-custom mb-2 w-100">
+          <button type="submit" className="btn btn-custom mb-2 w-100" >
             Place Order
+           
           </button>
         </div>
       </form>

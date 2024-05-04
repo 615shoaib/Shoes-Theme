@@ -59,12 +59,12 @@ function Shop() {
               </p>
             </div>
             <div className="row mb-5">
-              {products.map((product, index) => (
+              {Array.isArray(products) && products.map((product, index) => (
                 <div key={index} className="col-lg-4 col-md-6 col-sm-12">
                   <div className="d-flex justify-content-center flex-column align-items-center">
                     <div
                       className="card popular-card"
-                      style={{ maxWidth: "250px", width: "100%" }}
+                      style={{ maxWidth: "150px", width: "100%" }}
                     >
                       {product.images && product.images.length > 0 && (
                         <img
@@ -72,7 +72,7 @@ function Shop() {
                           alt=""
                           loading="lazy"
                           className="card-image img-fluid "
-                          style={{ maxWidth: "100%", width: "100%" }}
+                        
                         />
                       )}
 

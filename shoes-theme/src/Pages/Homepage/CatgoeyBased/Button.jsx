@@ -37,7 +37,7 @@ const Button = ({filteredCategories,loading }) => {
         ))
       )
       :(
-        <div className="d-flex flex-column flex-shrink-0 sidebar text-dark bg-dark mx-0 mb-2">
+        <div className="d-flex flex-column flex-shrink-0 sidebar text-dark bg-dark mx-0 mb-2 bg-dark">
      
         {
         Array.isArray (filteredCategories) &&  filteredCategories.map((category) => (
