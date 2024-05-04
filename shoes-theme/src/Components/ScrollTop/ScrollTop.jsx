@@ -27,7 +27,7 @@ const ScrollTops = () => {
   return (
     <div className={`scroll-to-top ${isVisible ? "visible" : ""}`}>
       <button onClick={scrollToTop} title="bottom To Top">
-        <img src={Images} alt="Go to Top" style={{width:'50px'}}/>
+       <i className="icon fa fa-angle-up"></i>
       </button>
     </div>
   );

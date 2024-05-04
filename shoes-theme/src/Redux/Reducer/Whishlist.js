@@ -1,7 +1,7 @@
-// wishlistSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
-const updateJson =localStorage.getItem('whishlist')
+// Retrieve data from localStorage
+const updateJson = localStorage.getItem('whishlist');
 const initialState = {
   wishlistItems: updateJson ? JSON.parse(updateJson) : [],
   totalPrice: 0,
@@ -14,26 +14,26 @@ const wishlistSlice = createSlice({
     addToWishlistById(state, action) {
       const productId = action.payload;
       if (!state.wishlistItems.includes(productId)) {
-        state.wishlistItems.push(productId);
+        const newWishlistItems = [...state.wishlistItems, productId];
+        state.wishlistItems = newWishlistItems;
+        localStorage.setItem('whishlist', JSON.stringify(newWishlistItems));
       }
-      localStorage.setItem("whishlist", JSON.stringify(state.wishlistItems));
     },
     removeWhishList(state, action) {
       const { id } = action.payload;
-      
-      state.wishlistItems = state.wishlistItems.filter(item => item.productId !== id);
-    
-      localStorage.setItem("whishlist", JSON.stringify(state.wishlistItems));
+      // Filter out the item with the specified id
+      state.wishlistItems = state.wishlistItems.filter(item => item.id !== id);
+      // Update localStorage if needed
+      localStorage.setItem('whishlist', JSON.stringify(state.wishlistItems));
     },
-    removeAllWhishList(state,action){
-      state.wishlistItems=[]
-      localStorage.removeItem("whishlist")
-    }
-    
-    
+    removeAllWhishList(state, action) {
+
+      state.wishlistItems = [];
+      localStorage.removeItem('whishlist');
+    },
   },
 });
 
-export const { addToWishlistById,removeWhishList,removeAllWhishList } = wishlistSlice.actions;
+export const { addToWishlistById, removeWhishList, removeAllWhishList } = wishlistSlice.actions;
 
 export default wishlistSlice.reducer;

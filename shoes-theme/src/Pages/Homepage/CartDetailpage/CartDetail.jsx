@@ -33,8 +33,7 @@ function ProductDetail() {
   };
 
   return (
-    <>
-    id : {id}
+   <>
       <div className="container detail-pg-container mt-2">
         <div className="row">
           <div className="row">
@@ -81,17 +80,21 @@ function ProductDetail() {
           <div >
           <div className="row">
 
-  <div className="col-lg-6 d-flex flex-wrap">
-    {
-      product.images.map((image, index) => (
-        <div key={index} className="col-lg-4 col-md-6 col-sm-12 mb-3 gap-0">
-            <div className="card" style={{width:'200px'}}>
-          <img src={image.src} className="img-fluid w-50 mt-3" alt={`Product Image ${index}`}   onClick={() => handleImageClick(image.src)} />
+          <div className="col-lg-6 d-flex flex-wrap gap-3">
+      {product.images.map((image, index) => (
+        <div key={index} className="col-lg-4 col-md-4 col-sm-4 col-4 mb-3">
+          <div className="card">
+            <img
+              src={image.src}
+              className="img-fluid mt-3"
+              alt={`Product Image ${index}`}
+              onClick={() => handleImageClick(image.src)}
+              style={{ cursor: 'pointer' }}
+            />
           </div>
         </div>
-      ))
-    }
-      </div>
+      ))}
+    </div>
 
 
 
@@ -116,7 +119,7 @@ function ProductDetail() {
                 <div className="tab-content" id="myTabContent">
                   <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <h5 >About</h5>
-                    <p className="pt-2 para w-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus distinctio dolores eveniet exercitationem explicabo nihil quaerat reprehenderit, sed tempora!</p>
+                    <p className='para'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus distinctio dolores eveniet exercitationem explicabo nihil quaerat reprehenderit, sed tempora!</p>
                   </div>
                   <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <div>

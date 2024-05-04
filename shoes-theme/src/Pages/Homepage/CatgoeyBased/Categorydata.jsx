@@ -6,19 +6,7 @@ import ViewCart from '../CartDetailpage/ViewCart';
 import HeartIcon from './HeartIcon';
 
 const Categorydata = ({ products, loading }) => {
-  const [clickedProductId, setClickedProductId] = useState(null);
 
-  const handleProductClick = (productId) => {
-    setClickedProductId(productId);
-  };
-
-  const handleMouseEnter = () => {
-    // Handle mouse enter event if needed
-  };
-
-  const handleMouseLeave = () => {
-    // Handle mouse leave event if needed
-  };
 
   return (
     <div className="container">
@@ -27,10 +15,10 @@ const Categorydata = ({ products, loading }) => {
           Array.from({ length: 3 }).map((_, index) => (
             <div key={index} className="col-lg-4 col-md-6 mb-4">
               <div className="card px-4">
-                <Skeleton variant="rectangular" width={300} height={200} animation="wave" />
+                <Skeleton variant="rectangular" width={200} height={200} animation="wave" />
                 <div className="card-body">
                   <h5 className="card-title">
-                    <Skeleton variant="text" width={200} animation="wave" />
+                    <Skeleton variant="text" width={180} animation="wave" />
                   </h5>
                   <p className="card-text">
                     <Skeleton variant="text" width={150} animation="wave" />
@@ -47,22 +35,14 @@ const Categorydata = ({ products, loading }) => {
           products.map(product => (
             <div key={product.id} className="col-lg-4 col-md-6 mb-4">
               <div className="card"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleProductClick(product.id)}
+              style={{width:"300px"}}
               >
                 <img
                   src={product.images && product.images.length > 0 ? product.images[0].src : ''}
                   className="card-img-top"
                   alt="Product"
                 />
-               {clickedProductId === product.id && product && product.images && product.images.length > 1 && (
-  <img
-    src={product.images[1].src}
-    alt="Hovered Product"
-    className="hover-image"
-  />
-)}
+  
 
                 <div className="card-body">
                   <div className="d-flex">

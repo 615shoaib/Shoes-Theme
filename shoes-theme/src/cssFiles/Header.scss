@@ -36,6 +36,8 @@ h1,h2,h3,h4,h5,h6{
 .active {
   color: #f25862 !important;
 }
+
+
 /* slider */
 .slide-container {
   cursor: grab;
@@ -184,6 +186,7 @@ h1,h2,h3,h4,h5,h6{
   visibility: hidden;
   transform: translateY(10px);
   transition: all 0.5s ease-in;
+  
   width: 125px;
   height: 34px;
   padding: 0 10px 0 10px;
@@ -858,6 +861,13 @@ width: 100%;
 
 
 
+
+
+
+
+
+
+
 /* media quries */
 
 @media (min-width: 992px) {
@@ -913,16 +923,16 @@ width: 100%;
 }
 
 // scroll
-::-webkit-scrollbar{
-  position: absolute;
-  top: 20px;
-  background-color: #303030;
-  width: 12px;
-}
-::-webkit-scrollbar-thumb{
-  background-color: #388396;
-  border-radius: 0%;
-}
+// ::-webkit-scrollbar{
+//   position: absolute;
+//   top: 20px;
+//   background-color: #303030;
+//   width: 12px;
+// }
+// ::-webkit-scrollbar-thumb{
+//   background-color: #388396;
+//   border-radius: 0%;
+// }
 
 
 // selection
@@ -936,33 +946,81 @@ width: 100%;
 // scrollbottomtotop
 .scroll-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 24px;
+  right: 24px;
   z-index: 1000;
   opacity: 0;
   transition: opacity 0.3s ease;
+  padding: 20px;
+  width: 60px;
+  height: 60px;
+
 }
 
 .scroll-to-top.visible {
   opacity: 1;
 }
 
-.scroll-to-top button {
-  background-color: #388396 !important;
-  color: white;
-  border: none;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  border-radius: 50px;
-  cursor: pointer;
-  outline: none;
-  box-shadow: 0 0 60px 20px #0000;
+
+// .scroll-to-top {
+//   position: fixed;
+
+//   z-index: 999;
+//   font-size: 18px!important;
+//   padding: 0;
+ 
+//   -ms-transform: scale(0);
+//   -o-transform: scale(0);
+//   -moz-transform: scale(0);
+//   -webkit-transform: scale(0);
+//   transform: scale(0);
+//   -ms-transition: all 500ms ease;
+//   -o-transition: all 500ms ease;
+//   -moz-transition: all 500ms ease;
+//   -webkit-transition: all 500ms ease;
+//   transition: all 500ms ease
+// }
+
+// .scroll-to-top button {
+//   background-color: #388396 !important;
+//   color: white;
+//   border: none;
+//   width: 50px;
+//   height: 50px;
+//   display: flex;
+//   justify-content: center;
+//   border-radius: 50px;
+//   cursor: pointer;
+//   outline: none;
+//   box-shadow: 0 0 60px 20px #0000;
+// }
+
+
+.scroll-to-top button{
+  background-color: #e33d3d;
+  border-color: #e33d3d;
+  color: #fff;
+  border-radius: 0px;
 }
 
-.scroll-to-top button:hover {
-  background-color: red;
+
+
+.animate {
+  animation: scaleAnimation 0.3s ease-in-out;
 }
 
+
+@keyframes scaleAnimation {
+  0% {
+      transform: rotate(360) scale(0);
+  }
+
+  50% {
+      transform: rotate(0) scale(1);
+  }
+
+  100% {
+      transform: rotate(0) scale(0);
+  }
+}
 

@@ -146,7 +146,7 @@ const FeatureSlider = () => {
                           {product.name}
                         </h5>
                         <div className="d-flex justify-content-between">
-                          <span>$75.00</span>
+                          <span>RS.{product.price}</span>
                           <div>
                           </div>
                         </div>

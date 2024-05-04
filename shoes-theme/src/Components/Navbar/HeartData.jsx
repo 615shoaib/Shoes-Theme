@@ -1,60 +1,74 @@
-import { useSelector,useDispatch } from "react-redux";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { removeAllWhishList, removeWhishList } from "../../Redux/Reducer/Whishlist";
 import AddtoCart from "../../Pages/Homepage/CatgoeyBased/AddTocart";
-import { removeWhishList } from "../../Redux/Reducer/Whishlist";
 
 const HeartData = () => {
   const wishlistItems = useSelector((state) => state.wishlist.wishlistItems);
+  const dispatch = useDispatch();
 
+  const handleClick = (id) => {
+    console.log(id)
+    dispatch(removeWhishList({ id }));
 
-  const dispatch = useDispatch()
+  };
 
-  const handleClick =(id)=>{
-    console.log(  dispatch(removeWhishList(id)))
-      dispatch(removeWhishList(id))
+  const handleClicks =()=>{
+    dispatch(removeAllWhishList())
   }
 
   return (
     <>
-      {wishlistItems && wishlistItems.length > 0 ? (
-        wishlistItems.map((cartItem, index) => (
-          <div className="mt-5 mb-4" key={index}>
-            <table className="table mb-5 table-resposnive">
-              <thead>
-                <tr>
-                  <th>Product Image</th>
-                  <th>Product Name</th>
-                  <th>Price</th>
-                </tr>
-              </thead>
+    <div className="container-fluid">
 
-              <tbody>
-                <tr>
+    
+      {wishlistItems && wishlistItems.length > 0 ? (
+        <div className="mt-5 mb-4">
+          <table className="table mb-5 table-responsive w-100">
+            <thead>
+              <tr>
+                <th>Product Image</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {wishlistItems.map((cartItem, index) => (
+                <tr key={index}>
                   <td>
-                    <button className="btn" onClick={()=>handleClick(cartItem.id)}>
-                      <i className=" fa fa-close"></i>
+                    <button className="btn" onClick={() => handleClick(cartItem.id)} >
+                      <i className="fa fa-close"></i>
                     </button>
                     {cartItem.images && cartItem.images.length > 0 && (
                       <img
-                        src={cartItem ? cartItem.images[0].src : null}
+                        src={cartItem.images[0].src}
                         alt="Product"
                         style={{ width: "50px" }}
                       />
                     )}
                   </td>
                   <td>{cartItem.name}</td>
-
                   <td>{cartItem.price}</td>
                 </tr>
-                <AddtoCart />
-              </tbody>
-            </table>
-          </div>
-        ))
+              ))}
+            </tbody>
+          </table>
+          <AddtoCart />
+       
+           <div>
+           <button className="btn btn-dark mb-2" onClick={()=>handleClicks()}>
+             Remove All Products
+           </button>
+         </div> 
+         </div>
       ) : (
         <div className="d-flex justify-content-center h-100 mb-5 mt-5">
           <h1 className="fs-1 mt-3">No products added to the wishlist</h1>
         </div>
       )}
+    
+      </div>
     </>
   );
 };
